@@ -1,0 +1,193 @@
+1)	Which of the following can be returned in the variable result from invoking the below Java SE code 
+java.util.Random r = new java.util.Random();
+int result = r.nextInt(7);
+
+a.	3
+b.	-1
+c.	1234567
+d.	7
+e.	0
+
+
+
+2)	2. Which of the following statements regarding the usage of the Java SE this() and super() keywords are valid?
+
+a.	If used, this() or super() calls must always be the first statements in a constructor
+b.	this() and super() can be used in the same (non-constructor) method
+c.	If neither this() nor super() is coded then the compiler will generate a call to the zero argument superclass constructor
+d.	this() and super() calls can be used in methods other than a constructor
+e.	this() and super() can be used in the same constructor
+
+
+
+3.. Which of the following will be the result of an attempt to compile and execute the Java SE code snippet below?
+	class ExceptionDemo {
+	public static void main(String[] args) {
+	      for (int x=3, int y=0; x>y; x--, y++) {
+	              System.out.print(x+ “ “+y+” ”);
+	}
+}
+	}
+a.	The output is “3 1  0 2”
+b.	A compilation error will occur at line number 4
+c.	The output is “ 3 0 2 1 “
+d.	A compilation error will occur at line number 3
+e.	A runtime exception will occur
+
+
+4.8.	Two Java SE classes are declared as shown below:
+
+public class Invoice {
+	public static String formatId(String oldId) {
+		return oldId + “_Invoice”
+
+	}
+}
+public class SalesInvoice extends Invoice {
+	public static String formatId (String oldId) {
+		return oldId + “_SalesInvoice”;
+	}
+}
+
+
+Which of the following statements are true about attempts to use these classes?
+
+a.	Invoice invoice = new SalesInvoice();
+System.out.println(invoice.formatId(“1234”));
+
+Will output 1234_SalesInvoice
+
+b.	Invoice invoice = new Invoice();
+System.out.println((SalesInvoice)Invoice.formatId(“1234”));
+
+Will output 1234_SalesInvoice
+
+c.	Invoice invoice = new Invoice(); .
+System.out.println(invoice.formatId(“1234”));
+
+Will output 1234_Invoice
+
+d.	SalesInvoice invoice = new SalesInvoice();
+System.out.println(Invoice.formatId(“1234”));
+
+Will output 1234_SalesInvoice
+
+e.	SalesInvoice invoice = new SalesInvoice();
+System.out.println(invoice.formatId(“1234”));
+
+Will output 1234_Invoice
+
+
+
+
+5.9.	Given code below contains overloaded and overridden constructor. Which of the following can be the result of an attempt to compile and execute this code?
+class Superclass {
+	Superclass() {
+		this(0);
+		System.out.println(“1”);
+	}
+	Superclass(int x) {
+		System.out.println(“2”+x);
+	}
+}
+public class Subclass extends Superclass {
+	Subclass(int x) {
+		System.out.println(“3”+ x);
+	}
+	Subclass(int x, int y) {
+		this(x);
+		System.out.println(“4”+ x + y);
+	}
+	public static void main(String[] args) {
+		new Subclass(2,3);
+	}
+}
+
+a.	The output is 
+32
+423
+b.	The output is.
+20
+1
+32
+423
+c.	The output is
+22
+32
+423
+d.	The output is
+5
+9
+e.	A Recursive constructor invocation compilation error occurs
+
+
+
+6.10.	In Java the two classes below are declared in the same file:
+class Parent {
+	protected static int count=0;
+	public Parent () { count++; }
+	static int getCount() { return count; }
+}
+
+public class Child extends Parent {
+public Child() { count++; }
+public static void main(String [] args) {
+		System.out.println(“Count = “+getCount());
+		Child obj = new Child();
+		System.out.println(“Count = “+ getCount());
+}
+}
+
+
+
+Which of the following can be the result of trying to compile and execute this file?
+
+a.	The file will compile and run and the output will be :
+Count = 0
+Count = 1
+b.	The file will not compile
+c.	The file will compile and run and the output will be :
+Count = 1
+Count = 2
+d.	The file will compile and run and the output will be : .
+Count = 0
+Count = 2
+e.	The file will compile but will generate a runtime error
+
+
+
+
+7.In Java SE, which of the following are true about the string s?
+String s = “abcd”;
+
+a.	The statement
+s.equals(“abcd”) will evaluate to true.
+b.	The statement
+S == “abcd” will evaluate to true
+c.	s.replace(‘a’,’f’) will modify the string s
+d.	Given
+String s2=new String(“abcd”);
+The statement 
+	s == s2 will evaluate to true
+e.	The statement
+s = “abcd” will eval 
+
+
+
+8.Class x
+{
+Public static void main(String[] args)
+{
+Int x=0;
+If(x>0)
+System.out.println(“ONE”);
+System.out.println(“TWO”);
+}
+}
+
+a.	ONE
+b.	ONE
+  TWO
+c.TWO
+d. NO OUTPUT
+
