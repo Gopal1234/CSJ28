@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+     
+     <!-- creating  1 bean for address -->
+     <bean id="addressObj1" class="cyber.pack1.Address">
+     <property name="city" value="Pune"></property>
+     <property name="pinCode" value="345677"></property>
+     </bean>
+     
+     <!-- creating  2 bean for address -->
+     <bean id="addressObj2" class="cyber.pack1.Address">
+     <property name="city" value="Chennai"></property>
+     <property name="pinCode" value="345697"></property>
+     </bean>
+     
+     <!-- creating 1 bean for passenger -->
+     <bean id="pasObj1" class="cyber.pack1.Passenger">
+     <property name="passengerName" value="A"></property>
+     <property name="adress" ref="addressObj1"></property>
+     <property name="contactNumber" value="345565"></property>
+     
+     </bean>
+     
+     <!-- creating 2 bean for passenger -->
+     <bean id="pasObj2" class="cyber.pack1.Passenger">
+     <property name="passengerName" value="B"></property>
+     <property name="adress" ref="addressObj2"></property>
+     <property name="contactNumber" value="348885"></property>
+     
+     </bean>
+     
+     
+     
+     
+     <!-- creating bean for Train -->
+     
+     <bean id="trainObj" class="cyber.pack1.Train">
+     <constructor-arg name="trainInfo">
+     <map>
+     <entry key="1234" value-ref="pasObj1"></entry>
+     <entry key="2234" value-ref="pasObj2"></entry>
+     
+     </map>
+     
+     
+       
+     </constructor-arg>
+     
+     
+     </bean>     
+          
+          
+          </beans>
