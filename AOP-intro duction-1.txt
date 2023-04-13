@@ -1,0 +1,52 @@
+What is Aspect Oriented Programming:
+
+Answer:AOP is a programming paradigm that aims to increase modularity by allowing the separation of cross-cutting concerns
+
+AOP breaks the program logic into individual distinct part , i. e. called concern
+
+It does this by adding additional behavior to existing code without modifying the code itself.
+
+It provides the pluggable way to dynamically add the additional concern before, after or around the actual logic
+
+consider a 
+
+class LoggerReport
+{
+
+public void startUSAServer()
+{
+
+
+}
+public void startIndianServer()
+{
+
+
+}
+public void startEuropianServer()
+{
+
+
+}
+
+
+}
+
+Understanding senario:
+
+I have to maintain log and send notification after calling methods 
+
+
+Problem without AOP:
+We can call methods (that maintains log and sends notification) from the methods starting with m. In such scenario, we need to write the code in all  methods
+
+
+Solution with AOP We don't have to call methods from the method. Now we can define the additional concern like maintaining log, sending notification etc. in the method of a class.
+
+n future, if client says to remove the notifier functionality, we need to change only class file. So, maintenance is easy in AOP.
+
+
+A cross-cutting concern is a concern that can affect the whole application and should be centralized in one location in code as possible, such as transaction management, authentication, logging, security etc.
+
+
+

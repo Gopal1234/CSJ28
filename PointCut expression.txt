@@ -1,0 +1,42 @@
+PointCut expression
+
+if you want call entire class methods
+
+execution(*className.*(..))
+
+if you want to call all theb public method
+
+execution(public * *(..)
+
+
+if you want to call all the public setters method
+
+execution public MyAccount.set*(..)
+
+
+if you want to call  specific method
+
+execution(public void display());
+
+
+
+
+
+1.Join point :
+Join point is any point in your program such as method execution, exception handling, field access etc. Spring supports only method execution join point.
+
+2.Advice :Advice represents an action taken by an aspect at a particular join point. There are different types of advices:
+
+Before Advice: it executes before a join point.
+After Returning Advice: it executes after a joint point completes normally.
+After Throwing Advice: it executes if method exits by throwing an exception.
+After (finally) Advice: it executes after a join point regardless of join point exit whether normally or exceptional return.
+Around Advice: It executes before and after a join point.
+
+3.Pointcut
+It is an expression language of AOP that matches join points.
+
+4.Aspect
+It is a class that contains advices, joinpoints etc.
+
+
