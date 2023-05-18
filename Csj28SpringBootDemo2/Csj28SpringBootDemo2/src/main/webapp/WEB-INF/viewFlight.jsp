@@ -10,5 +10,10 @@
 Flight Number:${flight.flightNumber}<br>
 
 Flight Name:${flight.flightName}<br>
+Flight Source:${flight.flightSource}<br>
+Flight Destination:${flight.flightDestination}<br>
+Flight Price:${flight.price}<br>
+Flight Date:${flight.flihgtDate}<br>
+layovers:${flight.layOvers}
 </body>
 </html>

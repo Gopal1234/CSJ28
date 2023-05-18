@@ -1,4 +1,4 @@
-package controller;
+package com.cyber.Csj28SpringBootDemo2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,14 +18,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 //as controller class
 //The bean of this class is auto detected and scanned by spring container
 //The controller class provides web handler method to map the request from client
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.cyber.Csj28SpringBootDemo2.Flight;
 import com.cyber.Csj28SpringBootDemo2.FlightDao;
 
 @Controller
+@SessionAttributes("flights")
 public class AppController {
 	@Autowired
 	FlightDao dao;
+	List<Flight> listOfFlight;
 
 	//displaySinUpPage is a web handler method
 	//this method annotated with RequestMammping annotation
@@ -88,5 +93,40 @@ public class AppController {
 		dao.saveFlight(flight);
 		return "viewFlight";
 	}
+	@RequestMapping(path="/viewFlightInTable")
+	public String viewFlights(Model m)
+	{
+	listOfFlight=	dao.getAllFlight();
+	m.addAttribute("flights",listOfFlight);
+		return "viewFlightInTabular";
+	}
+	@RequestMapping(path="editFlight/{number}")
+	public String edit(@PathVariable int number, Model m)
+	{
+	Flight flight=	dao.getFlightByNumber(number);
+	System.out.println(flight);
+	m.addAttribute("flight", flight);
+	return "updateFlight";
+	}
 	
+	@RequestMapping(path="/Csj28SpringBootDemo2/editMyFlight")
+	public String updateMyFlight(@RequestParam("t1") String source, @RequestParam("t2")String dest,@RequestParam("t3") String price, @RequestParam("t")String fnum)
+	{
+		
+		System.out.println("controller");
+		double prc=Double.parseDouble(price);
+		int fn=Integer.parseInt(fnum);
+	int status=	dao.updateFlight(source, dest, prc, fn);
+	System.out.println(status);
+	if(status>0)
+	{
+		return "viewFlightInTabular";
+	}else
+	{
+		return "errorPage";
+	}
+	
+	
+	
+   }
 }
