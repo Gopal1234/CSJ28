@@ -32,4 +32,12 @@ public class FlightDao implements FlightService {
     	int k=repos.updateFlight(source, destination, price, fNum);
     	return k;
     }
+    public void deleteFlight(int fn)
+    {
+    	Flight flight=getFlightByNumber(fn);
+    	repos.delete(flight);
+    }
+    
+    
+    
 }

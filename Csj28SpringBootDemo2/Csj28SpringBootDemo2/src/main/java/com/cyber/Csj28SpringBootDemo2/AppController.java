@@ -110,7 +110,9 @@ public class AppController {
 	}
 	
 	@RequestMapping(path="/Csj28SpringBootDemo2/editMyFlight")
-	public String updateMyFlight(@RequestParam("t1") String source, @RequestParam("t2")String dest,@RequestParam("t3") String price, @RequestParam("t")String fnum)
+	public String updateMyFlight(@RequestParam("t1") String source, 
+			@RequestParam("t2")String dest,@RequestParam("t3") String price,
+			@RequestParam("t")String fnum)
 	{
 		
 		System.out.println("controller");
@@ -120,13 +122,18 @@ public class AppController {
 	System.out.println(status);
 	if(status>0)
 	{
-		return "viewFlightInTabular";
+		return "updatedFlight";
 	}else
 	{
 		return "errorPage";
 	}
 	
 	
-	
    }
+	@RequestMapping(path="deleteFlight/{number}")
+	public String deleteFlight(@PathVariable int number)
+	{
+		dao.deleteFlight(number);
+		return "deletedFlight";
+	}
 }
