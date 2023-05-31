@@ -1,0 +1,65 @@
+<html>
+<head>
+
+<title>
+
+</title>
+
+</head>
+<body>
+    <form name=""myForm"  action="hello.html" method="get" onsubmit=" return validateForm()">
+        <h1>Enter name</h1><input type="text" name="t1" id="t1"><br>
+        <h1>Enter phone</h1><input type="text" name="t2" id="t2"><br>
+        <h1>Enter mail</h1><input type="text" name="t3" id="t3"><br>
+        <input type="submit" value="SignUp">
+
+
+
+
+    </form>
+    
+    <script>
+        function validateForm()
+{
+    let eName=document.getElementById("t1").value;
+    let ph=document.getElementById("t2").value;
+    let empMail=document.getElementById("t3").value;
+  console.log(eName + " "+ph+" "+empMail);
+  if(eName=="")
+  {
+alert("Please enter the employee name")
+return false;
+  }
+  if(ph=="")
+  {
+alert("Please enter the your mobile number")
+return false;
+  }
+  if(empMail=="")
+  {
+alert("Please enter the employee mail Id")
+return false;
+  }
+
+  let expMobile=/[6-9]{1}[0-9]{9}$/;
+  if(!(expMobile.test(ph)))
+  {
+    alert("Kindly give correct mobile number");
+    return false;
+  }
+  //abc@gmail.com
+  let expMail=/[a-zA-Z0-9._-]+[@]{1}[a-z]+[.]{1}[a-zA-Z]{3}$/;
+  if(!(expMail.test(empMail)))
+  {
+    alert("Kindly give correct email Id");
+    return false;
+  }
+
+
+  return true;
+
+}
+    </script>
+</body>
+
+</html>
