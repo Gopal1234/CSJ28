@@ -1,0 +1,110 @@
+What is web service
+Services that can be accessed over network are called web services,
+
+what are the difference between web service and web application?
+
+1.web application consist it's own web pages which may designed through HTML,CSS,JS,JSP and every time it return those web pages dynamicaly
+
+2.Web applications always use HTTP/HTTPS protocol whereas traditional web services use SOAP protocol. Recently REST is getting popularity that is an architecture style and almost all times run on HTTP/HTTPS protocol.
+
+3.Web applications are not meant for reusability whereas this is one of the benefit of web services. A single web service can be used by different kinds of applications.
+
+4.Web applications are capable to maintain user session, web services are stateless.
+
+Where is web services does not consist web pages , it return raw data in form of JSON or XML(universal format) 
+
+***json or xml data can be accessed by any technology, any server and from any platform
+
+json :
+    1.JSON stands for JavaScript Object Notation.
+    2.It was designed for human-readable data interchange.
+    3.The filename extension is .json.
+    4.JSON Internet Media type is application/json
+
+
+JSON is easy to read and write.
+It is a lightweight text-based interchange format.
+JSON is language independent.
+
+Example: Example of JSON to store single object
+{
+   "book": 
+	
+      {
+         "id":"01",
+         "language": "Java",
+         "edition": "third",
+         "author": "Herbert Schildt"
+      }
+   
+}
+
+Example of JSON to store multiple objects
+{
+   "book": [
+	
+      {
+         "id":"01",
+         "language": "Java",
+         "edition": "third",
+         "author": "Herbert Schildt"
+      },
+	
+      {
+         "id":"07",
+         "language": "C++",
+         "edition": "second",
+         "author": "E.Balagurusamy"
+      }
+   ]
+}
+
+
+Webservices are divided into two category:
+.SOAP (Simple Object Access Protocol):
+i.it defines standard xml format
+ii.It defines the way to build web services
+iii.we use WSDL(web service descripton language)
+iv.it is protocol based
+v.It restrict to produce only xml format
+
+
+REST:
+i.REST stands for REpresentational State Transfer. It is developed by Roy Thomas Fielding who also developed HTTP
+
+ii.REST is an architectural approach, not a protocol.
+
+iii.It does not define the standard message exchange format. We can build REST services with both XML and JSON. JSON is more popular format with REST.
+
+
+iv.The key abstraction is a resource in REST. A resource can be anything. It can be accessed through a Uniform Resource Identifier (URI).
+
+v.The resource has representations like XML, HTML, and JSON. The current state is captured by representational resource. When we request a resource, we provide the representation of the resource. The important methods of HTTP are:
+
+GET: It reads a resource.
+PUT: It updates an existing resource.
+POST: It creates a new resource.
+DELETE: It deletes the resource.
+
+vi.HTTP also defines the following standard status code:
+
+404: RESOURCE NOT FOUND
+200: SUCCESS
+201: CREATED
+401: UNAUTHORIZED
+500: SERVER ERROR
+
+
+Advantages of RESTful:
+A.RESTful web services are platform-independent.
+B.It can be written in any programming language and can be executed on any platform.
+C.It provides different data format like JSON, text, HTML, and XML.
+D.These are reusable.
+E.These are language neutral.
+
+
+
+
+
+
+

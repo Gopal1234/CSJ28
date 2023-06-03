@@ -1,0 +1,23 @@
+What is Microservice?
+
+Microservice is collection of small independently
+deployable services work together and modeled around a business domain
+
+All services can be different version
+
+It avoid distributed monolith architecture
+
+It increases productivity
+independently all services can be well tested and scalled
+
+enable security concern segregation
+
+
+Architecting microservices
+
+i.Analyze domain
+ii.define bounded context
+iii.define entities,aggregates and service
+iv.identify service
+
+client-->API gateway--servie1, service2, service3 ...that means all services will be registerd with one central server to lookup and monitor
